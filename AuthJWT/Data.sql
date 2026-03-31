@@ -1,3 +1,12 @@
+CREATE TABLE Users(
+    UserId INT IDENTITY PRIMARY KEY,
+    Username VARCHAR(100),
+    PasswordHash VARCHAR(500),
+    RefreshToken VARCHAR(500),
+    RefreshTokenExpiryTime DATETIME
+)
+
+
 INSERT INTO Users (Username, PasswordHash, RefreshToken, RefreshTokenExpiryTime)
 VALUES ('alice', 'password123', CONVERT(VARCHAR(36), NEWID()), DATEADD(day, 7, GETUTCDATE()));
 
